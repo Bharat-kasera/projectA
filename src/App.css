@@ -7,23 +7,36 @@
 .hoverWrapper {
   height: 100%;
   transition: width 0.5s ease; 
+  overflow: hidden;
 }
 .card{
   width: 25vw;
+  overflow: hidden;
 }
 
 .card:hover .textBox {
   width: 260px !important;
   background-color: #0B1744 !important;
+  transition: width 0.5s ease; 
 }
 
 .card-grid > .card .hoverWrapper {
   transition: filter 0.5s ease; 
 }
 
-.card-grid:hover > .card:not(:hover) .hoverWrapper {
+.card-grid:hover > .card:not(:hover) .hoverWrapper>img {
   filter: blur(3px);
 }
+.card-grid:hover > .card:not(:hover) {
+  transition: width 0.5s ease; 
+}
 
+.card-grid:hover > .card:hover {
+  width: 40% !important;
+  transition: width 0.5s ease; 
+}
 
+.card .hoverWrapper .textBox {
+  filter: none !important;
+}
 

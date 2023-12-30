@@ -340,7 +340,7 @@ const landingPage = () => {
 
                 
               >
-                Spain
+                South America
               </div><div
                 style={{
                   "&:hover": {
@@ -369,37 +369,159 @@ const landingPage = () => {
 
                 
               >
-                Spain
-              </div><div
-                style={{
-                  "&:hover": {
-                    backgroundColor: "#2E8EB4", // Keep the same color on hover
-                  },
-                  width: "100px",
-                  height: "30px",
-                  backgroundColor: "#7BB9D2",
-                  fontFamily: PRIMARY_TEXT_STYLES.lucidaSans,
-                  fontWeight: "400",
-                  fontStyle: "italic",
-                  color: "white",
-                  fontSize: "13px",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  cursor: "pointer",
-                  transition: "background-color 0.3s",
-
-                }}
-                onMouseOver={(e) =>
-                  (e.target.style.backgroundColor = "#5a99b3")
-                }
-                onMouseOut={(e) => (e.target.style.backgroundColor = "#7BB9D2")}
-                onClick={() => handleRegionClick("Spain")}
-
-                
-              >
-                Spain
+                Europe
               </div>
+              <div
+                style={{
+                  "&:hover": {
+                    backgroundColor: "#2E8EB4", // Keep the same color on hover
+                  },
+                  width: "100px",
+                  height: "30px",
+                  backgroundColor: "#7BB9D2",
+                  fontFamily: PRIMARY_TEXT_STYLES.lucidaSans,
+                  fontWeight: "400",
+                  fontStyle: "italic",
+                  color: "white",
+                  fontSize: "13px",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  cursor: "pointer",
+                  transition: "background-color 0.3s",
+
+                }}
+                onMouseOver={(e) =>
+                  (e.target.style.backgroundColor = "#5a99b3")
+                }
+                onMouseOut={(e) => (e.target.style.backgroundColor = "#7BB9D2")}
+                onClick={() => handleRegionClick("Spain")}
+
+                
+              >
+                MiddleEast
+              </div>
+              <div
+                style={{
+                  "&:hover": {
+                    backgroundColor: "#2E8EB4", // Keep the same color on hover
+                  },
+                  width: "100px",
+                  height: "30px",
+                  backgroundColor: "#7BB9D2",
+                  fontFamily: PRIMARY_TEXT_STYLES.lucidaSans,
+                  fontWeight: "400",
+                  fontStyle: "italic",
+                  color: "white",
+                  fontSize: "13px",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  cursor: "pointer",
+                  transition: "background-color 0.3s",
+
+                }}
+                onMouseOver={(e) =>
+                  (e.target.style.backgroundColor = "#5a99b3")
+                }
+                onMouseOut={(e) => (e.target.style.backgroundColor = "#7BB9D2")}
+                onClick={() => handleRegionClick("Spain")}
+
+                
+              >
+                China
+              </div>
+              <div
+                style={{
+                  "&:hover": {
+                    backgroundColor: "#2E8EB4", // Keep the same color on hover
+                  },
+                  width: "100px",
+                  height: "30px",
+                  backgroundColor: "#7BB9D2",
+                  fontFamily: PRIMARY_TEXT_STYLES.lucidaSans,
+                  fontWeight: "400",
+                  fontStyle: "italic",
+                  color: "white",
+                  fontSize: "13px",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  cursor: "pointer",
+                  transition: "background-color 0.3s",
+
+                }}
+                onMouseOver={(e) =>
+                  (e.target.style.backgroundColor = "#5a99b3")
+                }
+                onMouseOut={(e) => (e.target.style.backgroundColor = "#7BB9D2")}
+                onClick={() => handleRegionClick("Spain")}
+
+                
+              >
+                Malaysia
+              </div>
+              <div
+                style={{
+                  "&:hover": {
+                    backgroundColor: "#2E8EB4", // Keep the same color on hover
+                  },
+                  width: "100px",
+                  height: "30px",
+                  backgroundColor: "#7BB9D2",
+                  fontFamily: PRIMARY_TEXT_STYLES.lucidaSans,
+                  fontWeight: "400",
+                  fontStyle: "italic",
+                  color: "white",
+                  fontSize: "13px",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  cursor: "pointer",
+                  transition: "background-color 0.3s",
+
+                }}
+                onMouseOver={(e) =>
+                  (e.target.style.backgroundColor = "#5a99b3")
+                }
+                onMouseOut={(e) => (e.target.style.backgroundColor = "#7BB9D2")}
+                onClick={() => handleRegionClick("Spain")}
+
+                
+              >
+                Australia
+              </div>
+              <div
+                style={{
+                  "&:hover": {
+                    backgroundColor: "#2E8EB4", // Keep the same color on hover
+                  },
+                  width: "100px",
+                  height: "30px",
+                  backgroundColor: "#7BB9D2",
+                  fontFamily: PRIMARY_TEXT_STYLES.lucidaSans,
+                  fontWeight: "400",
+                  fontStyle: "italic",
+                  color: "white",
+                  fontSize: "13px",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  cursor: "pointer",
+                  transition: "background-color 0.3s",
+
+                }}
+                onMouseOver={(e) =>
+                  (e.target.style.backgroundColor = "#5a99b3")
+                }
+                onMouseOut={(e) => (e.target.style.backgroundColor = "#7BB9D2")}
+                onClick={() => handleRegionClick("Spain")}
+
+                
+              >
+                New Zealand
+              </div>
+              
             </div>
           </div>
 

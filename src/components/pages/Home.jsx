@@ -6,14 +6,20 @@ import Navbar from "../Navbar";
 import Footer from "../Footer";
 import { PRIMARY_COLORS } from "../../utils/colors";
 import { PRIMARY_TEXT_STYLES } from "../../utils/textStyles";
-
+import { useParallax } from 'react-scroll-parallax';
 // Traditional imports for card data
-import imageUrl1 from "../../assets/modern-dining-room-living-room-with-luxury-decor.jpg";
-import imageUrl2 from "../../assets/yarnHeaderImage.jpg";
-import imageUrl3 from "../../assets/legs-soccer-football-player.jpg";
-import imageUrl4 from "../../assets/day-ends-we-see-wake-lights-cars-highway.jpg";
+import imageUrl1 from "../../assets/fabrics.jpg";
+import imageUrl2 from "../../assets/yarn.jpg";
+import imageUrl3 from "../../assets/fibers.jpg";
+import imageUrl4 from "../../assets/geotextile.jpg";
+import { motion,useInView } from "framer-motion";
+import { useRef } from "react";
+
+
 
 const Home = () => {
+  const ref= useRef(null);
+  const isInView = useInView(ref, { once: true });
   // Card data with traditional imports
   const cardsData = [
     {
@@ -40,11 +46,13 @@ const Home = () => {
 
   return (
     <Box
+    
       style={{
         backgroundColor: "#93C6DB",
         width: "100vw",
         position: "relative",
       }}
+      
     >
       <Navbar />
 
@@ -55,6 +63,7 @@ const Home = () => {
           paddingBottom: "10px",
           transition: "width 0.2s",
           height: "59.5vh",
+          width:"100vw",
         }}
         className="card-grid"
       >
@@ -67,6 +76,10 @@ const Home = () => {
               transition: "width 0.3s ease",
             }}
             className="card"
+            component={motion.div}
+        initial={{ opacity: 0, y:-120 }}
+          animate={{ opacity: 1, y:0 }}
+          transition={{ duration: 0.5,delay:1.75, ease: "easeInOut"}}
           >
             <div className="hoverWrapper">
               {/* Your image and existing code */}

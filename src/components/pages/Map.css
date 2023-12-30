@@ -174,7 +174,7 @@
 }
 
 .earth {
-    animation: rotate 2000s linear  infinite; 
+    animation: rotate 10s linear  infinite; 
     background-repeat: repeat-x;
     background-size: cover;
   }
