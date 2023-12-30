@@ -1,0 +1,175 @@
+.pin {
+    background: #93C6DB;
+    position: absolute;
+    border-radius:50%;
+    width:0.8em;
+    height:0.8em;
+    cursor: pointer;
+}
+.pin::before {
+    content: '';
+    background: #93C6DB;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    animation:
+        pulse 1.3s ease-in-out infinite;
+
+}
+
+.pin span {
+    display: inline-block;
+    white-space: nowrap;
+    position: absolute;
+    left: 1.5em;
+    top: 50%;
+    transform:translateY(-50%);
+    background: #2E8EB4;
+    color: white;
+    padding: 6px;
+    border-radius: 3em;
+    padding: 0.3em e.6em;
+    font-size: 0.9em;
+}
+
+.France{
+    top:45.9%;
+    left:47.5%;
+}
+.Saudi{
+    top:59.5%;
+    left:59.5%;
+}
+.uk{
+    top:42%;
+    left:46%;
+}
+.Spain{
+    top:49.9%;
+    left:45.5%;
+}
+@keyframes pulse{
+    100%{
+        opacity: 0;
+        transform: translate(-50%,-50%) scale(4);
+    }
+}
+
+.earth {
+    animation: rotate 80s linear  infinite; 
+    background-repeat: repeat-x;
+    background-size: cover;
+  }
+  
+
+  @keyframes rotate{
+      100%{
+        transform: translateX(100%);
+      }
+      0%{
+        transform: translateX(-10%);
+      }
+
+  }
+ 
+
+/* 
+  .pin {
+    background: #93C6DB;
+    position: absolute;
+    border-radius:50%;
+    width:0.8em;
+    height:0.8em;
+    cursor: pointer;
+}
+.pin::before {
+    content: '';
+    background: #93C6DB;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    animation:
+        pulse 1.3s ease-in-out infinite;
+
+}
+
+.pin span {
+    display: inline-block;
+    white-space: nowrap;
+    position: absolute;
+    left: 1.5em;
+    top: 50%;
+    transform:translateY(-50%);
+    background: #2E8EB4;
+    color: white;
+    padding: 6px;
+    border-radius: 3em;
+    padding: 0.3em e.6em;
+    font-size: 0.9em;
+}
+
+.France{
+    top:45.9%;
+    left:47.5%;
+}
+.Saudi{
+    top:59.5%;
+    left:59.5%;
+}
+.uk{
+    top:42%;
+    left:46%;
+}
+.Spain{
+    top:49.9%;
+    left:45.5%;
+}
+@keyframes pulse{
+    100%{
+        opacity: 0;
+        transform: translate(-50%,-50%) scale(4);
+    }
+}
+
+.container{
+    position: absolute;
+    z-index: 1;
+}
+
+.earth{
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    width: 100vw;
+    z-index: 1;
+  }
+
+.mapDiv{
+    animation: rotate-day 4s linear infinite;
+    background-image: url(../../assets/worldMapl2.svg);
+    background-size: cover;
+    height: 400px;
+    width: 400px;
+    z-index: 3;
+
+    transform-origin: 100px;
+    transform: scale(3);
+    overflow: hidden;
+}
+
+
+
+@keyframes rotate-day {
+    0% { background-position: 1200% 0; }
+    100% { background-position: -4000% 0; }
+}
+
+  */
