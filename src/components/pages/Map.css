@@ -1,4 +1,4 @@
-.pin {
+/* .pin {
     background: #93C6DB;
     position: absolute;
     border-radius:50%;
@@ -60,7 +60,7 @@
 }
 
 .earth {
-    animation: rotate 80s linear  infinite; 
+    animation: rotate 200s linear  infinite; 
     background-repeat: repeat-x;
     background-size: cover;
   }
@@ -73,9 +73,146 @@
       0%{
         transform: translateX(-10%);
       }
+      
+
+  } */
+ 
+
+  /* ###################################### */
+
+
+  .pin {
+    background: #93C6DB;
+    position: absolute;
+    border-radius:50%;
+    width:0.8em;
+    height:0.8em;
+    cursor: pointer;
+}
+.pin::before {
+    content: '';
+    background: transparent;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 3px solid #93C6DB; /* Add a border to create a ring effect */
+    animation: pulse 1.3s ease-in-out infinite;
+}
+
+.pin span {
+    display: inline-block;
+    white-space: nowrap;
+    position: absolute;
+    left: 1.5em;
+    top: 50%;
+    transform:translateY(-50%);
+    background: #2E8EB4;
+    color: white;
+    padding: 6px;
+    border-radius: 3em;
+    padding: 0.3em e.6em;
+    font-size: 0.9em;
+}
+
+.France{
+    top:45.9%;
+    left:47.5%;
+}
+.Saudi{
+    top:59.5%;
+    left:59.5%;
+}
+.uk{
+    top:42%;
+    left:46%;
+}
+.Spain{
+    top:49.9%;
+    left:45.5%;
+}
+.NorthAmerica{
+    top:40%;
+    left:16%;
+}
+.SouthAmerica{
+    top:74%;
+    left:30.5%;
+}
+.Europe{
+    top:47%;
+    left:53%;
+}
+.MiddleEast{
+    top:57%;
+    left:59%;
+}
+.China{
+    top:53%;
+    left:74%;
+}
+.Malaysia{
+    top:65.8%;
+    left:75%;
+}
+.Australia {
+    top:78%;
+    left:83%;
+}
+.NewZealand{
+    top:86.5%;
+    left:93.4%;
+}
+@keyframes pulse{
+    100%{
+        opacity: 0.8;
+        transform: translate(-50%,-50%) scale(3);
+    }
+}
+
+.earth {
+    animation: rotate 2000s linear  infinite; 
+    background-repeat: repeat-x;
+    background-size: cover;
+  }
+  
+
+  @keyframes rotate{
+      100%{
+        transform: translateX(100%);
+      }
+      0%{
+        transform: translateX(-10%);
+      }
+      
 
   }
- 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ####################################### */
 
 /* 
   .pin {
