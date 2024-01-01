@@ -114,7 +114,7 @@ const GridPattern = ({ src, rows, cols, productType }) => {
         }}
       >
           
-        <Typography variant="h1" fontWeight="500" style={{ fontFamily: PRIMARY_TEXT_STYLES.lucidaSans, fontStyle:"italic",color: 'white',backgroundColor:PRIMARY_COLORS.royalBlue,paddingLeft:"20px",paddingRight:"32vw" }}>
+        <Typography variant="h1" fontWeight="500" style={{ fontFamily: PRIMARY_TEXT_STYLES.lucidaSans, fontStyle:"italic",color: 'white',backgroundColor:PRIMARY_COLORS.royalBlue,paddingLeft:"20px",paddingRight:"32vw",borderRadius:"10px 0 0 10px" }}>
           {title}
         </Typography>
       </Box>
