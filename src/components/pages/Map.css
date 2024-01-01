@@ -1,84 +1,3 @@
-/* .pin {
-    background: #93C6DB;
-    position: absolute;
-    border-radius:50%;
-    width:0.8em;
-    height:0.8em;
-    cursor: pointer;
-}
-.pin::before {
-    content: '';
-    background: #93C6DB;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    animation:
-        pulse 1.3s ease-in-out infinite;
-
-}
-
-.pin span {
-    display: inline-block;
-    white-space: nowrap;
-    position: absolute;
-    left: 1.5em;
-    top: 50%;
-    transform:translateY(-50%);
-    background: #2E8EB4;
-    color: white;
-    padding: 6px;
-    border-radius: 3em;
-    padding: 0.3em e.6em;
-    font-size: 0.9em;
-}
-
-.France{
-    top:45.9%;
-    left:47.5%;
-}
-.Saudi{
-    top:59.5%;
-    left:59.5%;
-}
-.uk{
-    top:42%;
-    left:46%;
-}
-.Spain{
-    top:49.9%;
-    left:45.5%;
-}
-@keyframes pulse{
-    100%{
-        opacity: 0;
-        transform: translate(-50%,-50%) scale(4);
-    }
-}
-
-.earth {
-    animation: rotate 200s linear  infinite; 
-    background-repeat: repeat-x;
-    background-size: cover;
-  }
-  
-
-  @keyframes rotate{
-      100%{
-        transform: translateX(100%);
-      }
-      0%{
-        transform: translateX(-10%);
-      }
-      
-
-  } */
- 
-
-  /* ###################################### */
 
 
   .pin {
@@ -109,38 +28,29 @@
     position: absolute;
     left: 1.5em;
     top: 50%;
-    transform:translateY(-50%);
+    transform: translateY(-50%);
     background: #2E8EB4;
     color: white;
     padding: 6px;
     border-radius: 3em;
-    padding: 0.3em e.6em;
+    padding: 0.3em 0.6em;
     font-size: 0.9em;
+    opacity: 0; 
+    transition: opacity 0.3s ease-in-out; 
 }
 
-.France{
-    top:45.9%;
-    left:47.5%;
+.pin:hover span {
+    opacity: 1; 
 }
-.Saudi{
-    top:59.5%;
-    left:59.5%;
-}
-.uk{
-    top:42%;
-    left:46%;
-}
-.Spain{
-    top:49.9%;
-    left:45.5%;
-}
+
+
 .NorthAmerica{
     top:40%;
     left:16%;
 }
-.SouthAmerica{
-    top:74%;
-    left:30.5%;
+.LatinAmerica{
+    top:71%;
+    left:30%;
 }
 .Europe{
     top:47%;
@@ -150,31 +60,25 @@
     top:57%;
     left:59%;
 }
-.China{
-    top:53%;
-    left:74%;
+.Asia{
+    top:51%;
+    left:69%;
 }
-.Malaysia{
-    top:65.8%;
-    left:75%;
-}
-.Australia {
+
+.Oceania{
     top:78%;
-    left:83%;
+    left:86%;
 }
-.NewZealand{
-    top:86.5%;
-    left:93.4%;
-}
+
 @keyframes pulse{
     100%{
         opacity: 0.8;
-        transform: translate(-50%,-50%) scale(3);
+        transform: translate(-50%,-50%) scale(2);
     }
 }
 
 .earth {
-    animation: rotate 10s linear  infinite; 
+    animation: rotate 250s linear  infinite; 
     background-repeat: repeat-x;
     background-size: cover;
   }
@@ -210,103 +114,3 @@
 
 
 
-
-
-/* ####################################### */
-
-/* 
-  .pin {
-    background: #93C6DB;
-    position: absolute;
-    border-radius:50%;
-    width:0.8em;
-    height:0.8em;
-    cursor: pointer;
-}
-.pin::before {
-    content: '';
-    background: #93C6DB;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    animation:
-        pulse 1.3s ease-in-out infinite;
-
-}
-
-.pin span {
-    display: inline-block;
-    white-space: nowrap;
-    position: absolute;
-    left: 1.5em;
-    top: 50%;
-    transform:translateY(-50%);
-    background: #2E8EB4;
-    color: white;
-    padding: 6px;
-    border-radius: 3em;
-    padding: 0.3em e.6em;
-    font-size: 0.9em;
-}
-
-.France{
-    top:45.9%;
-    left:47.5%;
-}
-.Saudi{
-    top:59.5%;
-    left:59.5%;
-}
-.uk{
-    top:42%;
-    left:46%;
-}
-.Spain{
-    top:49.9%;
-    left:45.5%;
-}
-@keyframes pulse{
-    100%{
-        opacity: 0;
-        transform: translate(-50%,-50%) scale(4);
-    }
-}
-
-.container{
-    position: absolute;
-    z-index: 1;
-}
-
-.earth{
-    height: 100vh;
-    overflow: hidden;
-    position: relative;
-    width: 100vw;
-    z-index: 1;
-  }
-
-.mapDiv{
-    animation: rotate-day 4s linear infinite;
-    background-image: url(../../assets/worldMapl2.svg);
-    background-size: cover;
-    height: 400px;
-    width: 400px;
-    z-index: 3;
-
-    transform-origin: 100px;
-    transform: scale(3);
-    overflow: hidden;
-}
-
-
-
-@keyframes rotate-day {
-    0% { background-position: 1200% 0; }
-    100% { background-position: -4000% 0; }
-}
-
-  */

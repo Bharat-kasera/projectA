@@ -50,12 +50,36 @@
 import { PRIMARY_COLORS } from "../utils/colors";
 import { PRIMARY_TEXT_STYLES } from "../utils/textStyles";
 import { Box, Typography } from '@mui/material';
+import { useState, useRef, useEffect } from "react";
+
+import { useTransform, useScroll, motion, useInView,useAnimation } from "framer-motion";
+
 
 const GridPattern = ({ src, rows, cols, productType }) => {
+
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start start", "end start"],
+  });
+  const bgIY = useTransform(scrollYProgress, [0, 1], ["-20%", "-80%"]);
+
+  const isInView = useInView(ref, { once: true });
+  const mainControls = useAnimation();
+  const slideControls = useAnimation();
+  useEffect(() => {
+    if (isInView) {
+      slideControls.start("visible");
+      mainControls.start("visible");
+    } else {
+      slideControls.start("hidden");
+      mainControls.start("hidden");
+    }
+  }, [isInView, mainControls, slideControls]);
     const title = productType.charAt(0).toUpperCase() + productType.slice(1);
   return (
-    <Box sx={{ position: 'relative', height: '600px', width: '100%'  }}>
-      <img src={src} alt="Grid Image" style={{ objectFit: 'cover', width: '100%', height: '100%' }} />
+    <Box component={motion.div} ref={ref} sx={{ position: 'relative', height: '600px', width: '100%' ,overflow:"hidden",objectFit:"cover" }}>
+      <motion.img src={src} alt="Grid Image" style={{ objectFit: "cover",objectPosition:"center", width: '120%', height: '200%',y:bgIY }} />
       <Box
         sx={{
           position: 'absolute',

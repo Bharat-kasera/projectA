@@ -17,6 +17,7 @@
     "@mui/styled-engine-sc": "^6.0.0-alpha.9",
     "@mui/styles": "^5.15.2",
     "@south-paw/react-vector-maps": "^3.2.0",
+    "@studio-freight/lenis": "^1.0.33",
     "framer-motion": "^10.16.16",
     "i18next": "^23.7.11",
     "i18next-browser-languagedetector": "^7.2.0",

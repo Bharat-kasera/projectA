@@ -15,8 +15,23 @@ import vid from "../assets/MattexVideo.mp4";
 
 import { Data } from "../data";
 import { useState, useRef, useEffect } from "react";
+import { useTransform, useScroll, motion, useInView,useAnimation } from "framer-motion";
 
 const ProductDetailPage = () => {
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start start", "end start"],
+  });
+  const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "40%"]);
+  const bgIY = useTransform(scrollYProgress, [0, 1], ["10%", "-60%"]);
+
+  
+
+  const backgroundY2 = useTransform(scrollYProgress, [0, 1], ["40%", "-110%"]);
+  const backgroundY3 = useTransform(scrollYProgress, [0, 1], ["0%", "-200%"]);
+  const backgroundY4 = useTransform(scrollYProgress, [0, 1], ["0%", "200%"]);
+  const textY = useTransform(scrollYProgress, [0, 1], ["0%", "260%"]);
   const [data, setData] = useState({});
   const [isPlaying, setIsPlaying] = useState(false);
 
@@ -43,31 +58,44 @@ const ProductDetailPage = () => {
     setData(productData);
   }, []);
 
-  // useEffect(() => {
-  //   const video = videoRef.current;
-  //   video.play();
-  //   setIsPlaying(true);
 
-  //   return () => {
-  //     video.pause();
-  //     setIsPlaying(false);
-  //   };
-  // }, []);
+
+  const mainControls = useAnimation();
+  const slideControls = useAnimation();
+  const isInView = useInView(ref, { once: true });
+
+  useEffect(() => {
+    if (isInView) {
+      slideControls.start("visible");
+      mainControls.start("visible");
+    } else {
+      slideControls.start("hidden");
+      mainControls.start("hidden");
+    }
+  }, [isInView, mainControls, slideControls]);
+
   return (
-    <Container maxWidth="false" style={{ padding: "0", width: "100vw" }}>
+    <Container
+    component={motion.div}
+      ref={ref}
+      maxWidth="false"
+      style={{ padding: "0", width: "100vw", overflow:"hidden" }}
+    >
       <Box
         style={{
           backgroundColor: "#93C6DB",
           width: "100vw",
         }}
       >
-        <Navbar />
-        <Box sx={{}}>
+        <motion.div >
+          <Navbar />
+        </motion.div>
+        <Box component={motion.div} style={{ y: backgroundY }}>
           <GridPattern src={imageUrl2} rows={3} cols={8} productType={type} />
         </Box>
       </Box>
       <Box
-        sx={{
+        style={{
           display: "flex",
           flexDirection: {
             xs: "column",
@@ -79,8 +107,10 @@ const ProductDetailPage = () => {
           height: "20rem",
           overflowY: "hidden",
         }}
+         
       >
-        <Box padding={8} sx={{}}>
+              
+        <Box padding={8} style={{}}>
           <Typography
             sx={{
               color: PRIMARY_COLORS.royalBlue,
@@ -95,9 +125,9 @@ const ProductDetailPage = () => {
         </Box>
       </Box>
 
-
-
-      <Box sx={{ width: "100vw", position: "relative" }}>
+      
+          
+      <Box component={motion.div}  style={{ width: "100vw", position: "relative",y: backgroundY2 }}>
         <Typography
           variant="h1"
           fontWeight="500"
@@ -111,6 +141,7 @@ const ProductDetailPage = () => {
             position: "absolute",
             top: "30%",
             right: 0,
+            overflow:"hidden",
           }}
         >
           Process
@@ -131,8 +162,8 @@ const ProductDetailPage = () => {
         />
       </Box>
 
-      <Box
-        sx={{
+      <Box 
+        style={{
           display: "flex",
           flexDirection: {
             xs: "column",
@@ -143,11 +174,12 @@ const ProductDetailPage = () => {
           backgroundColor: "#93C6DB",
           height: "20rem",
           overflowY: "hidden",
+          marginTop:"-420px"
         }}
       >
-        <Box padding={8}>
+        <Box padding={8} component={motion.div}>
           <Typography
-            sx={{
+            style={{
               color: PRIMARY_COLORS.royalBlue,
               fontFamily: PRIMARY_TEXT_STYLES.lucidaSans,
               textAlign: "center",
@@ -160,24 +192,34 @@ const ProductDetailPage = () => {
         </Box>
       </Box>
 
-      <Box sx={{ display: "flex" }}>
-        <Box sx={{ flex: 1, position: "relative", height: "60vh" }}>
-          <img
+      <Box componet={motion.div} style={{ display: "flex", overflow:"hidden" }}
+      
+      
+      >
+        <Box
+          componet={motion.div}
+        
+         style={{ flex: 1,  height: "60vh", }}>
+          <motion.img
             src={fabImg1}
             style={{
               objectFit: "cover",
+              objectPosition:"center",
               width: "100%",
-              height: "100%",
+              height: "200%",
+              y:bgIY
             }}
           />
         </Box>
         <Box sx={{ flex: 1, position: "relative", height: "60vh" }}>
-          <img
+          <motion.img
             src={fabImg2}
             style={{
               objectFit: "cover",
               width: "100%",
-              height: "100%",
+              height: "200%",
+              y:bgIY
+
             }}
           />
         </Box>
@@ -197,7 +239,7 @@ const ProductDetailPage = () => {
               width: "100%",
               height: "100%",
               padding: "40px",
-              lineHeight: "35px",
+              lineHeight: "34px",
             }}
           >
             <span style={{ fontWeight: "600" }}>End usage: </span>
@@ -208,17 +250,21 @@ const ProductDetailPage = () => {
           </Typography>
         </Box>
         <Box sx={{ flex: 1, position: "relative", height: "60vh" }}>
-          <img
+          <motion.img
             src={fabImg3}
             style={{
               objectFit: "cover",
               width: "100%",
-              height: "100%",
+              height: "200%",
+              y:bgIY
             }}
           />
         </Box>
       </Box>
-      <Footer />
+
+      <motion.div style={{ overflow: "hidden" }}>
+        <Footer />
+      </motion.div>
     </Container>
   );
 };

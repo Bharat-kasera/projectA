@@ -71,7 +71,7 @@ const Navbar = () => {
               transform: "scale(1.1) !important" ,
               boxShadow: "0px 0px 15px rgba(0, 0, 0, 0.1)",
               zIndex: 1,
-              backgroundColor: "#88a7bd",
+              backgroundColor: PRIMARY_COLORS.royalBlue,
             },
           }}
         >
@@ -111,7 +111,7 @@ const Navbar = () => {
               transform: "scale(1.1) !important",
               boxShadow: "0px 0px 15px rgba(0, 0, 0, 0.1)",
               zIndex: 1,
-              backgroundColor: "#9EB9C9",
+              backgroundColor: "#1e2c56",
             },
           }}
         >
@@ -151,7 +151,7 @@ const Navbar = () => {
               transform: "scale(1.1) !important",
               boxShadow: "0px 0px 15px rgba(0, 0, 0, 0.1)",
               zIndex: 1,
-              backgroundColor: "#B2CCDB",
+              backgroundColor: "#334168",
             },
           }}
         >
@@ -191,7 +191,7 @@ const Navbar = () => {
               transform: "scale(1.1) !important",
               boxShadow: "0px 0px 15px rgba(0, 0, 0, 0.1)",
               zIndex: 1,
-              backgroundColor: "#C5DFEC",
+              backgroundColor: "#49577a",
             },
           }}
         >
@@ -215,7 +215,7 @@ const Navbar = () => {
 
         <Box
         component={motion.div}
-        initial={{ opacity: 0, y:-200 }}
+        initial={{ opacity: 0, y:-100 }}
           animate={{ opacity: 1, y:0 }}
           transition={{ duration: 0.5,delay:2,ease: "easeInOut" }}
           sx={{
@@ -230,7 +230,8 @@ const Navbar = () => {
               transform: "scale(1.1) !important",
               boxShadow: "0px 0px 15px rgba(0, 0, 0, 0.1)",
               zIndex: 1,
-              backgroundColor: "#f0f0f0",
+              backgroundColor: "#606d8c",
+              color: "#ffffff !important",
             },
           }}
         >
@@ -246,6 +247,7 @@ const Navbar = () => {
               color: "#93C6DB",
               width: "100px",
               fontSize: "15px",
+              
             }}
           >
             Sustainability
