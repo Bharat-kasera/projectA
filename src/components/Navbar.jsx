@@ -1,7 +1,7 @@
 import { Box, Grid, Typography } from "@mui/material";
 import { PRIMARY_COLORS } from "../utils/colors";
-import logo from "../assets/logo.svg";
-import { motion,useInView } from "framer-motion";
+import logo from "../assets/logo.png";
+import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
 import {
@@ -10,11 +10,11 @@ import {
 } from "../utils/textStyles";
 
 const Navbar = () => {
-  const ref= useRef(null);
+  const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
   return (
     <Grid
-    ref={ref}
+      ref={ref}
       container
       spacing={2}
       style={{
@@ -27,9 +27,9 @@ const Navbar = () => {
       padding={8}
     >
       <motion.div
-        initial={{ opacity: 0, x:-200 }}
-          animate={{ opacity: 1,x:0 }}
-          transition={{ duration: 1,delay:0.5,ease: "easeInOut" }}
+        initial={{ opacity: 0, x: -200 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 1, delay: 0.5, ease: "easeInOut" }}
       >
         <img
           src={logo}
@@ -53,22 +53,26 @@ const Navbar = () => {
         </Typography>
       </motion.div>
 
-      <Box sx={{ display: "flex", gap: "2px" }}>
+      <Box sx={{ display: "flex", gap: "2px" ,paddingBottom:"47px"}}>
         <Box
           component={motion.div}
-          initial={{ opacity: 0, y:-180 }}
-          animate={{ opacity: 1, y:0 }}
-          transition={{ duration: 0.5,delay:1, ease: "easeInOut"}}
+          initial={{ opacity: 0, y: -180 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 1, ease: "easeInOut" }}
           sx={{
             cursor: "pointer",
-            backgroundColor: "#AAD0E3",
+            backgroundColor: "#4785AC",
             padding: "10px",
             position: "relative",
-            width: "120px", // Adjust the width as needed for a square
-            height: "110px",
+            width: "120px", 
+            height: "50px",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
             transition: "transform 0.3s, box-shadow 0.3s",
+
             ":hover": {
-              transform: "scale(1.1) !important" ,
+              transform: "scale(1.1) !important",
               boxShadow: "0px 0px 15px rgba(0, 0, 0, 0.1)",
               zIndex: 1,
               backgroundColor: PRIMARY_COLORS.royalBlue,
@@ -79,9 +83,6 @@ const Navbar = () => {
             fontStyle={"italic"}
             sx={{
               position: "absolute",
-              bottom: "10px", // Adjust the distance from the bottom
-              left: "50%",
-              transform: "translateX(-50%)",
               fontFamily: PRIMARY_TEXT_STYLES.lucidaSans,
               fontWeight: "400",
               color: "#FFFFFF",
@@ -94,24 +95,26 @@ const Navbar = () => {
         </Box>
 
         <Box
-        component={motion.div}
-        initial={{ opacity: 0, y:-160 }}
-          animate={{ opacity: 1, y:0 }}
-          transition={{ duration: 0.5,delay:1.25,ease: "easeInOut" }}
+          component={motion.div}
+          initial={{ opacity: 0, y: -160 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 1.25, ease: "easeInOut" }}
           sx={{
             cursor: "pointer",
-            backgroundColor: "#BFDDE8",
+            backgroundColor: "#508CB0",
             padding: "10px",
             position: "relative",
             width: "120px", // Adjust the width as needed for a square
-            height: "110px",
-            
+            height: "50px",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
             transition: "transform 0.3s, box-shadow 0.3s",
             ":hover": {
               transform: "scale(1.1) !important",
               boxShadow: "0px 0px 15px rgba(0, 0, 0, 0.1)",
               zIndex: 1,
-              backgroundColor: "#1e2c56",
+              backgroundColor: PRIMARY_COLORS.royalBlue,
             },
           }}
         >
@@ -119,13 +122,9 @@ const Navbar = () => {
             fontStyle={"italic"}
             sx={{
               position: "absolute",
-              bottom: "10px", // Adjust the distance from the bottom
-              left: "50%",
-              transform: "translateX(-50%)",
               fontFamily: PRIMARY_TEXT_STYLES.lucidaSans,
               fontWeight: "400",
               color: "#FFFFFF",
-              width: "90px",
               fontSize: "15px",
             }}
           >
@@ -134,24 +133,27 @@ const Navbar = () => {
         </Box>
 
         <Box
-        component={motion.div}
-        initial={{ opacity: 0, y:-140 }}
-          animate={{ opacity: 1, y:0 }}
-          transition={{ duration: 0.5,delay:1.5,ease: "easeInOut" }}
+          component={motion.div}
+          initial={{ opacity: 0, y: -140 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 1.5, ease: "easeInOut" }}
           sx={{
             cursor: "pointer",
-            backgroundColor: "#D5E7F1",
+            backgroundColor: "#5994B6",
             padding: "10px",
             position: "relative",
             width: "120px", // Adjust the width as needed for a square
-            height: "110px",
-            
+            height: "50px",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+
             transition: "transform 0.3s, box-shadow 0.3s",
             ":hover": {
               transform: "scale(1.1) !important",
               boxShadow: "0px 0px 15px rgba(0, 0, 0, 0.1)",
               zIndex: 1,
-              backgroundColor: "#334168",
+              backgroundColor: PRIMARY_COLORS.royalBlue,
             },
           }}
         >
@@ -159,13 +161,47 @@ const Navbar = () => {
             fontStyle={"italic"}
             sx={{
               position: "absolute",
-              bottom: "10px", // Adjust the distance from the bottom
-              left: "50%",
-              transform: "translateX(-50%)",
               fontFamily: PRIMARY_TEXT_STYLES.lucidaSans,
               fontWeight: "400",
-              color: "#93C6DB",
-              width: "100px",
+              color: "#ffffff",
+              fontSize: "15px",
+            }}
+          >
+            Sustainability
+          </Typography>
+        </Box>
+
+        <Box
+          component={motion.div}
+          initial={{ opacity: 0, y: -120 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 1.75, ease: "easeInOut" }}
+          sx={{
+            cursor: "pointer",
+            backgroundColor: "#6399BB",
+            padding: "10px",
+            position: "relative",
+            width: "130px", // Adjust the width as needed for a square
+            height: "50px",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            transition: "transform 0.3s, box-shadow 0.3s",
+            ":hover": {
+              transform: "scale(1.1) !important",
+              boxShadow: "0px 0px 15px rgba(0, 0, 0, 0.1)",
+              zIndex: 1,
+              backgroundColor: PRIMARY_COLORS.royalBlue,
+            },
+          }}
+        >
+          <Typography
+            fontStyle={"italic"}
+            sx={{
+              position: "absolute",
+              fontFamily: PRIMARY_TEXT_STYLES.lucidaSans,
+              fontWeight: "400",
+              color: "#ffffff",
               fontSize: "15px",
             }}
           >
@@ -174,24 +210,27 @@ const Navbar = () => {
         </Box>
 
         <Box
-        component={motion.div}
-        initial={{ opacity: 0, y:-120 }}
-          animate={{ opacity: 1, y:0 }}
-          transition={{ duration: 0.5,delay:1.75, ease: "easeInOut"}}
+          component={motion.div}
+          initial={{ opacity: 0, y: -100 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 2, ease: "easeInOut" }}
           sx={{
             cursor: "pointer",
-            backgroundColor: "#E9F4F8",
+            backgroundColor: "#6EA1C0",
             padding: "10px",
             position: "relative",
             width: "120px", // Adjust the width as needed for a square
-            height: "110px",
-            
+            height: "50px",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
             transition: "transform 0.3s, box-shadow 0.3s",
             ":hover": {
               transform: "scale(1.1) !important",
               boxShadow: "0px 0px 15px rgba(0, 0, 0, 0.1)",
               zIndex: 1,
-              backgroundColor: "#49577a",
+              backgroundColor: PRIMARY_COLORS.royalBlue,
+              
             },
           }}
         >
@@ -199,58 +238,13 @@ const Navbar = () => {
             fontStyle={"italic"}
             sx={{
               position: "absolute",
-              bottom: "10px", // Adjust the distance from the bottom
-              left: "50%",
-              transform: "translateX(-50%)",
               fontFamily: PRIMARY_TEXT_STYLES.lucidaSans,
               fontWeight: "400",
-              color: "#93C6DB",
-              width: "90px",
+              color: "#ffffff",
               fontSize: "15px",
             }}
           >
             Contact Us
-          </Typography>
-        </Box>
-
-        <Box
-        component={motion.div}
-        initial={{ opacity: 0, y:-100 }}
-          animate={{ opacity: 1, y:0 }}
-          transition={{ duration: 0.5,delay:2,ease: "easeInOut" }}
-          sx={{
-            cursor: "pointer",
-            backgroundColor: "#FFFFFF",
-            padding: "10px",
-            position: "relative",
-            width: "120px", // Adjust the width as needed for a square
-            height: "110px",
-            transition: "transform 0.3s, box-shadow 0.3s",
-            ":hover": {
-              transform: "scale(1.1) !important",
-              boxShadow: "0px 0px 15px rgba(0, 0, 0, 0.1)",
-              zIndex: 1,
-              backgroundColor: "#606d8c",
-              color: "#ffffff !important",
-            },
-          }}
-        >
-          <Typography
-            fontStyle={"italic"}
-            sx={{
-              position: "absolute",
-              bottom: "10px", // Adjust the distance from the bottom
-              left: "50%",
-              transform: "translateX(-50%)",
-              fontFamily: PRIMARY_TEXT_STYLES.lucidaSans,
-              fontWeight: "400",
-              color: "#93C6DB",
-              width: "100px",
-              fontSize: "15px",
-              
-            }}
-          >
-            Sustainability
           </Typography>
         </Box>
       </Box>

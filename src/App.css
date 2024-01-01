@@ -16,8 +16,11 @@
 
 .card:hover .textBox {
   width: 260px !important;
-  background-color: #0B1744 !important;
+  background-color: #ffffff !important;
   transition: width 0.5s ease; 
+}
+.card:hover .title {
+  color: #0B1744 !important;
 }
 
 .card-grid > .card .hoverWrapper {

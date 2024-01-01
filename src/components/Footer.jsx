@@ -4,7 +4,7 @@ import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import { PRIMARY_COLORS } from "../utils/colors";
-import logo from "../assets/logo.svg";
+import logo from "../assets/logo.png";
 import {
   useTransform,
   useScroll,

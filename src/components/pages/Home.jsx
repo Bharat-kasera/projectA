@@ -214,7 +214,13 @@ import imageUrl2 from "../../assets/yarn.jpg";
 import imageUrl3 from "../../assets/fibers.jpg";
 import imageUrl4 from "../../assets/geotextile.jpg";
 import Lenis from "@studio-freight/lenis";
-import { useTransform, useScroll, motion, useInView,useAnimation } from "framer-motion";
+import {
+  useTransform,
+  useScroll,
+  motion,
+  useInView,
+  useAnimation,
+} from "framer-motion";
 import { Opacity } from "@mui/icons-material";
 
 const Home = () => {
@@ -236,7 +242,7 @@ const Home = () => {
     }
   }, [isInView, mainControls, slideControls]);
   const bgIY = useTransform(scrollYProgress, [0, 1], ["-20%", "-110%"]);
-  
+
   const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
   const backgroundY2 = useTransform(scrollYProgress, [0, 1], ["60%", "-70%"]);
   const backgroundY3 = useTransform(scrollYProgress, [0, 1], ["0%", "500%"]);
@@ -244,31 +250,30 @@ const Home = () => {
   const textY = useTransform(scrollYProgress, [0, 1], ["0%", "-100%"]);
   const opacitytransition = useTransform(
     scrollYProgress,
-    [1, 0], ["500%", "-100%"])
-    
-  
+    [1, 0],
+    ["500%", "-100%"]
+  );
 
-  // Card data with traditional imports
   const cardsData = [
     {
       imageUrl: imageUrl1,
       link: "/fabrics",
-      title: "Fabrics",
+      title: "FABRICS",
     },
     {
       imageUrl: imageUrl2,
       link: "/yarns",
-      title: "Yarns",
+      title: "YARNS",
     },
     {
       imageUrl: imageUrl3,
       link: "/fibers",
-      title: "Fibers",
+      title: "FIBERS",
     },
     {
       imageUrl: imageUrl4,
       link: "/geotextile",
-      title: "Geotextile",
+      title: "GEOTEXTILE",
     },
   ];
 
@@ -281,7 +286,6 @@ const Home = () => {
       }}
       ref={ref}
       component={motion.div}
-
     >
       <motion.div style={{ y: textY }}>
         <Navbar />
@@ -309,20 +313,18 @@ const Home = () => {
             className="card"
             component={motion.div}
           >
-            <motion.div
-              className="hoverWrapper "
-            >
+            <motion.div className="hoverWrapper ">
               {/* Your image and existing code */}
               <motion.img
                 src={card.imageUrl}
                 alt={`Grid Image ${index + 1}`}
                 style={{
                   objectFit: "cover",
-                  objectPosition:"center",
+                  objectPosition: "center",
                   width: "100%",
                   height: "180%",
                   transition: "width 0.4s ease",
-                  y: bgIY 
+                  y: bgIY,
                 }}
                 className="imgHover"
               />
@@ -341,10 +343,12 @@ const Home = () => {
                   display: "flex",
                   alignItems: "center",
                   lineHeight: 1.5,
+                  borderRadius: "10px 0 0 10px",
                   cursor: "pointer",
                   transition: "width 0.4s ease, background-color 0.2s",
-                  ":hover": {
-                    backgroundColor: PRIMARY_COLORS.royalBlue,
+                  "&:hover": {
+                    backgroundColor: "white",
+                    color: PRIMARY_COLORS.royalBlue, // Change font color on hover
                   },
                 }}
                 className="textBox"
@@ -357,6 +361,7 @@ const Home = () => {
                     <Typography
                       fontSize={30}
                       fontWeight="500"
+                      className="title"
                       style={{
                         fontFamily: PRIMARY_TEXT_STYLES.lucidaSans,
                         fontStyle: "italic",
@@ -372,7 +377,7 @@ const Home = () => {
         ))}
       </motion.div>
 
-      <Box padding={8} component={motion.div} style={{overflow:"hidden",}}>
+      <Box padding={8} component={motion.div} style={{ overflow: "hidden" }}>
         <motion.div
           style={{
             color: PRIMARY_COLORS.royalBlue,
@@ -380,8 +385,8 @@ const Home = () => {
             textAlign: "center",
             fontStyle: "italic",
             fontWeight: "400",
-            y:backgroundY2,
-            opacity:opacitytransition,
+            y: backgroundY2,
+            opacity: opacitytransition,
           }}
         >
           As a prominent global frontrunner in the high-tenacity fibre sector
@@ -403,8 +408,8 @@ const Home = () => {
           <ArrowBackIcon fontSize="inherit" />
         </IconButton>
       </Link>
-      <motion.div style={{y:backgroundY, overflow:"hidden"}}>
-      <Footer />
+      <motion.div style={{ y: backgroundY, overflow: "hidden" }}>
+        <Footer />
       </motion.div>
     </Box>
   );
