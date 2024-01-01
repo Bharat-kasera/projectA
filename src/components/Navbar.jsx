@@ -1,6 +1,8 @@
 import { Box, Grid, Typography } from "@mui/material";
 import { PRIMARY_COLORS } from "../utils/colors";
 import logo from "../assets/logo.svg";
+import { motion,useInView } from "framer-motion";
+import { useRef } from "react";
 
 import {
   PRIMARY_TEXT_STYLES,
@@ -8,8 +10,11 @@ import {
 } from "../utils/textStyles";
 
 const Navbar = () => {
+  const ref= useRef(null);
+  const isInView = useInView(ref, { once: true });
   return (
     <Grid
+    ref={ref}
       container
       spacing={2}
       style={{
@@ -21,7 +26,11 @@ const Navbar = () => {
       }}
       padding={8}
     >
-      <Box>
+      <motion.div
+        initial={{ opacity: 0, x:-200 }}
+          animate={{ opacity: 1,x:0 }}
+          transition={{ duration: 1,delay:0.5,ease: "easeInOut" }}
+      >
         <img
           src={logo}
           style={{ width: "300px", height: "auto", paddingBottom: "20px" }}
@@ -42,10 +51,14 @@ const Navbar = () => {
         >
           global standards
         </Typography>
-      </Box>
+      </motion.div>
 
       <Box sx={{ display: "flex", gap: "2px" }}>
         <Box
+          component={motion.div}
+          initial={{ opacity: 0, y:-180 }}
+          animate={{ opacity: 1, y:0 }}
+          transition={{ duration: 0.5,delay:1, ease: "easeInOut"}}
           sx={{
             cursor: "pointer",
             backgroundColor: "#AAD0E3",
@@ -53,13 +66,12 @@ const Navbar = () => {
             position: "relative",
             width: "120px", // Adjust the width as needed for a square
             height: "110px",
-            cursor: "pointer",
             transition: "transform 0.3s, box-shadow 0.3s",
             ":hover": {
-              transform: "scale(1.1)",
+              transform: "scale(1.1) !important" ,
               boxShadow: "0px 0px 15px rgba(0, 0, 0, 0.1)",
-            zIndex: 1,
-
+              zIndex: 1,
+              backgroundColor: PRIMARY_COLORS.royalBlue,
             },
           }}
         >
@@ -82,6 +94,10 @@ const Navbar = () => {
         </Box>
 
         <Box
+        component={motion.div}
+        initial={{ opacity: 0, y:-160 }}
+          animate={{ opacity: 1, y:0 }}
+          transition={{ duration: 0.5,delay:1.25,ease: "easeInOut" }}
           sx={{
             cursor: "pointer",
             backgroundColor: "#BFDDE8",
@@ -89,13 +105,13 @@ const Navbar = () => {
             position: "relative",
             width: "120px", // Adjust the width as needed for a square
             height: "110px",
-            cursor: "pointer",
+            
             transition: "transform 0.3s, box-shadow 0.3s",
             ":hover": {
-              transform: "scale(1.1)",
+              transform: "scale(1.1) !important",
               boxShadow: "0px 0px 15px rgba(0, 0, 0, 0.1)",
-            zIndex: 1,
-
+              zIndex: 1,
+              backgroundColor: "#1e2c56",
             },
           }}
         >
@@ -118,6 +134,10 @@ const Navbar = () => {
         </Box>
 
         <Box
+        component={motion.div}
+        initial={{ opacity: 0, y:-140 }}
+          animate={{ opacity: 1, y:0 }}
+          transition={{ duration: 0.5,delay:1.5,ease: "easeInOut" }}
           sx={{
             cursor: "pointer",
             backgroundColor: "#D5E7F1",
@@ -125,13 +145,13 @@ const Navbar = () => {
             position: "relative",
             width: "120px", // Adjust the width as needed for a square
             height: "110px",
-            cursor: "pointer",
+            
             transition: "transform 0.3s, box-shadow 0.3s",
             ":hover": {
-              transform: "scale(1.1)",
+              transform: "scale(1.1) !important",
               boxShadow: "0px 0px 15px rgba(0, 0, 0, 0.1)",
-            zIndex: 1,
-
+              zIndex: 1,
+              backgroundColor: "#334168",
             },
           }}
         >
@@ -154,6 +174,10 @@ const Navbar = () => {
         </Box>
 
         <Box
+        component={motion.div}
+        initial={{ opacity: 0, y:-120 }}
+          animate={{ opacity: 1, y:0 }}
+          transition={{ duration: 0.5,delay:1.75, ease: "easeInOut"}}
           sx={{
             cursor: "pointer",
             backgroundColor: "#E9F4F8",
@@ -161,13 +185,13 @@ const Navbar = () => {
             position: "relative",
             width: "120px", // Adjust the width as needed for a square
             height: "110px",
-            cursor: "pointer",
+            
             transition: "transform 0.3s, box-shadow 0.3s",
             ":hover": {
-              transform: "scale(1.1)",
+              transform: "scale(1.1) !important",
               boxShadow: "0px 0px 15px rgba(0, 0, 0, 0.1)",
-            zIndex: 1,
-
+              zIndex: 1,
+              backgroundColor: "#49577a",
             },
           }}
         >
@@ -190,6 +214,10 @@ const Navbar = () => {
         </Box>
 
         <Box
+        component={motion.div}
+        initial={{ opacity: 0, y:-100 }}
+          animate={{ opacity: 1, y:0 }}
+          transition={{ duration: 0.5,delay:2,ease: "easeInOut" }}
           sx={{
             cursor: "pointer",
             backgroundColor: "#FFFFFF",
@@ -197,13 +225,13 @@ const Navbar = () => {
             position: "relative",
             width: "120px", // Adjust the width as needed for a square
             height: "110px",
-            cursor: "pointer",
             transition: "transform 0.3s, box-shadow 0.3s",
-            
             ":hover": {
-              transform: "scale(1.1)",
+              transform: "scale(1.1) !important",
               boxShadow: "0px 0px 15px rgba(0, 0, 0, 0.1)",
               zIndex: 1,
+              backgroundColor: "#606d8c",
+              color: "#ffffff !important",
             },
           }}
         >
@@ -219,6 +247,7 @@ const Navbar = () => {
               color: "#93C6DB",
               width: "100px",
               fontSize: "15px",
+              
             }}
           >
             Sustainability

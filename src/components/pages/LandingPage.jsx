@@ -1,4 +1,3 @@
-
 import { Box, Grid, Typography, IconButton } from "@mui/material";
 import { PRIMARY_COLORS } from "../../utils/colors";
 import { useState } from "react";
@@ -17,13 +16,8 @@ import * as React from "react";
 import "./Map.css";
 import { Link, useNavigate } from "react-router-dom";
 
-
-
 const landingPage = () => {
   const navigate = useNavigate();
-
-
-
 
   const [isRegionHovered, setRegionHovered] = useState(false);
   const [isLanguageHovered, setLanguageHovered] = useState(false);
@@ -33,7 +27,6 @@ const landingPage = () => {
     setSelectedRegion(region);
     setRegionHovered(false);
   };
-
 
   // ... (rest of your code)
 
@@ -94,13 +87,10 @@ const landingPage = () => {
   const subMenuStyle = {
     width: "100px",
     position: "absolute",
-    height:"160px",
-    overflowY:"scroll",
     top: "100px", // Adjust the distance from the main menu
     left: "0",
     display: isRegionHovered ? "block" : "none",
     transition: "display 0.3s", // Smooth transition effect
-
   };
   const subMenuStyle2 = {
     width: "100px",
@@ -135,7 +125,21 @@ const landingPage = () => {
         flexDirection: "column",
         overflow: "hidden",
       }}
-    >
+    > <div style={{
+      position:"absolute",
+      display: "flex",
+          width: "520px",
+          height: "120vh",
+          flexDirection:"column",
+          justifyContent:"center",
+          backgroundColor: "#93C6DB",
+          filter: "blur(40px)", 
+          marginLeft:"-80px",
+          zIndex: 2,
+          overflow:"hidden",
+    }}>
+
+    </div>
       <Box
         sx={{
           color: PRIMARY_COLORS.white,
@@ -173,12 +177,14 @@ const landingPage = () => {
             style={menuStyle}
             onMouseEnter={() => setRegionHovered(true)}
             onMouseLeave={() => setRegionHovered(false)}
-
           >
             <div style={menuTextStyle}>{selectedRegion}</div>
             <div style={subMenuStyle}>
               <div
                 style={{
+                  "&:hover": {
+                    backgroundColor: "#2E8EB4", // Keep the same color on hover
+                  },
                   width: "100px",
                   height: "30px",
                   backgroundColor: "#2E8EB4",
@@ -197,12 +203,15 @@ const landingPage = () => {
                   (e.target.style.backgroundColor = "#1C607F")
                 }
                 onMouseOut={(e) => (e.target.style.backgroundColor = "#2E8EB4")}
-                onClick={() => handleRegionClick("Saudi Arabia")}
+                onClick={() => handleRegionClick("North America")}
               >
-                Saudi Arabia
+                North America
               </div>
               <div
                 style={{
+                  "&:hover": {
+                    backgroundColor: "#489CC0", // Keep the same color on hover
+                  },
                   width: "100px",
                   height: "30px",
                   backgroundColor: "#489CC0",
@@ -216,19 +225,20 @@ const landingPage = () => {
                   justifyContent: "center",
                   cursor: "pointer",
                   transition: "background-color 0.3s",
-
                 }}
                 onMouseOver={(e) =>
                   (e.target.style.backgroundColor = "#2E7FA3")
                 }
                 onMouseOut={(e) => (e.target.style.backgroundColor = "#489CC0")}
-                onClick={() => handleRegionClick("UK")}
+                onClick={() => handleRegionClick("Latin America")}
               >
-                UK
+                Latin America
               </div>
               <div
                 style={{
-
+                  "&:hover": {
+                    backgroundColor: "#2E8EB4", // Keep the same color on hover
+                  },
                   width: "100px",
                   height: "30px",
                   backgroundColor: "#61ABC8",
@@ -242,15 +252,14 @@ const landingPage = () => {
                   justifyContent: "center",
                   cursor: "pointer",
                   transition: "background-color 0.3s",
-
                 }}
                 onMouseOver={(e) =>
                   (e.target.style.backgroundColor = "#428daa")
                 }
                 onMouseOut={(e) => (e.target.style.backgroundColor = "#61ABC8")}
-                onClick={() => handleRegionClick("France")}
+                onClick={() => handleRegionClick("Spain")}
               >
-                France
+                Europe
               </div>
               <div
                 style={{
@@ -270,17 +279,14 @@ const landingPage = () => {
                   justifyContent: "center",
                   cursor: "pointer",
                   transition: "background-color 0.3s",
-
                 }}
                 onMouseOver={(e) =>
                   (e.target.style.backgroundColor = "#5a99b3")
                 }
                 onMouseOut={(e) => (e.target.style.backgroundColor = "#7BB9D2")}
-                onClick={() => handleRegionClick("Spain")}
-
-                
+                onClick={() => handleRegionClick("Middle East")}
               >
-                Spain
+                Middle East
               </div>
               <div
                 style={{
@@ -289,7 +295,7 @@ const landingPage = () => {
                   },
                   width: "100px",
                   height: "30px",
-                  backgroundColor: "#7BB9D2",
+                  backgroundColor: "#a3ccdb",
                   fontFamily: PRIMARY_TEXT_STYLES.lucidaSans,
                   fontWeight: "400",
                   fontStyle: "italic",
@@ -300,17 +306,14 @@ const landingPage = () => {
                   justifyContent: "center",
                   cursor: "pointer",
                   transition: "background-color 0.3s",
-
                 }}
                 onMouseOver={(e) =>
-                  (e.target.style.backgroundColor = "#5a99b3")
+                  (e.target.style.backgroundColor = "#8ab8c7")
                 }
-                onMouseOut={(e) => (e.target.style.backgroundColor = "#7BB9D2")}
-                onClick={() => handleRegionClick("North America")}
-
-                
+                onMouseOut={(e) => (e.target.style.backgroundColor = "#a3ccdb")}
+                onClick={() => handleRegionClick("Asia")}
               >
-                North America
+                Asia
               </div>
               <div
                 style={{
@@ -319,7 +322,7 @@ const landingPage = () => {
                   },
                   width: "100px",
                   height: "30px",
-                  backgroundColor: "#7BB9D2",
+                  backgroundColor: "#c8e0ea",
                   fontFamily: PRIMARY_TEXT_STYLES.lucidaSans,
                   fontWeight: "400",
                   fontStyle: "italic",
@@ -330,76 +333,16 @@ const landingPage = () => {
                   justifyContent: "center",
                   cursor: "pointer",
                   transition: "background-color 0.3s",
-
                 }}
                 onMouseOver={(e) =>
-                  (e.target.style.backgroundColor = "#5a99b3")
+                  (e.target.style.backgroundColor = "#aecdd8")
                 }
-                onMouseOut={(e) => (e.target.style.backgroundColor = "#7BB9D2")}
-                onClick={() => handleRegionClick("Spain")}
-
-                
+                onMouseOut={(e) => (e.target.style.backgroundColor = "#c8e0ea")}
+                onClick={() => handleRegionClick("Oceania")}
               >
-                Spain
-              </div><div
-                style={{
-                  "&:hover": {
-                    backgroundColor: "#2E8EB4", // Keep the same color on hover
-                  },
-                  width: "100px",
-                  height: "30px",
-                  backgroundColor: "#7BB9D2",
-                  fontFamily: PRIMARY_TEXT_STYLES.lucidaSans,
-                  fontWeight: "400",
-                  fontStyle: "italic",
-                  color: "white",
-                  fontSize: "13px",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  cursor: "pointer",
-                  transition: "background-color 0.3s",
-
-                }}
-                onMouseOver={(e) =>
-                  (e.target.style.backgroundColor = "#5a99b3")
-                }
-                onMouseOut={(e) => (e.target.style.backgroundColor = "#7BB9D2")}
-                onClick={() => handleRegionClick("Spain")}
-
-                
-              >
-                Spain
-              </div><div
-                style={{
-                  "&:hover": {
-                    backgroundColor: "#2E8EB4", // Keep the same color on hover
-                  },
-                  width: "100px",
-                  height: "30px",
-                  backgroundColor: "#7BB9D2",
-                  fontFamily: PRIMARY_TEXT_STYLES.lucidaSans,
-                  fontWeight: "400",
-                  fontStyle: "italic",
-                  color: "white",
-                  fontSize: "13px",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  cursor: "pointer",
-                  transition: "background-color 0.3s",
-
-                }}
-                onMouseOver={(e) =>
-                  (e.target.style.backgroundColor = "#5a99b3")
-                }
-                onMouseOut={(e) => (e.target.style.backgroundColor = "#7BB9D2")}
-                onClick={() => handleRegionClick("Spain")}
-
-                
-              >
-                Spain
+                Oceania
               </div>
+              
             </div>
           </div>
 
@@ -408,7 +351,7 @@ const landingPage = () => {
             onMouseEnter={() => setLanguageHovered(true)}
             onMouseLeave={() => setLanguageHovered(false)}
           >
-            <div style={menuTextStyle2} > {selectedLanguage}</div>
+            <div style={menuTextStyle2}> {selectedLanguage}</div>
             <div style={subMenuStyle2}>
               <div
                 style={{
@@ -449,7 +392,6 @@ const landingPage = () => {
                   justifyContent: "center",
                   cursor: "pointer",
                   transition: "background-color 0.3s",
-
                 }}
                 onMouseOver={(e) =>
                   (e.target.style.backgroundColor = "#2E7FA3")
@@ -461,7 +403,6 @@ const landingPage = () => {
               </div>
               <div
                 style={{
-
                   width: "100px",
                   height: "30px",
                   backgroundColor: "#61ABC8",
@@ -475,7 +416,6 @@ const landingPage = () => {
                   justifyContent: "center",
                   cursor: "pointer",
                   transition: "background-color 0.3s",
-
                 }}
                 onMouseOver={(e) =>
                   (e.target.style.backgroundColor = "#428daa")
@@ -503,7 +443,6 @@ const landingPage = () => {
                   justifyContent: "center",
                   cursor: "pointer",
                   transition: "background-color 0.3s",
-
                 }}
                 onMouseOver={(e) =>
                   (e.target.style.backgroundColor = "#5a99b3")
@@ -515,8 +454,6 @@ const landingPage = () => {
               </div>
             </div>
           </div>
-
-
         </Box>
       </Box>
 
@@ -595,8 +532,10 @@ const landingPage = () => {
               North America
             </span>
           </div>
-          <div className="pin SouthAmerica
-">
+          <div
+            className="pin LatinAmerica
+"
+          >
             <span
               style={{
                 fontFamily: PRIMARY_TEXT_STYLES.lucidaSans,
@@ -604,8 +543,7 @@ const landingPage = () => {
                 fontStyle: "italic",
               }}
             >
-              South America
-
+              Latin America
             </span>
           </div>
           <div className="pin Europe ">
@@ -616,11 +554,13 @@ const landingPage = () => {
                 fontStyle: "italic",
               }}
             >
-              Europe 
+              Europe
             </span>
           </div>
-          <div className="pin MiddleEast
- ">
+          <div
+            className="pin MiddleEast
+ "
+          >
             <span
               style={{
                 fontFamily: PRIMARY_TEXT_STYLES.lucidaSans,
@@ -629,10 +569,9 @@ const landingPage = () => {
               }}
             >
               Middle East
- 
             </span>
           </div>
-          <div className="pin China ">
+          <div className="pin Asia ">
             <span
               style={{
                 fontFamily: PRIMARY_TEXT_STYLES.lucidaSans,
@@ -640,10 +579,10 @@ const landingPage = () => {
                 fontStyle: "italic",
               }}
             >
-              China 
+              Asia
             </span>
           </div>
-          <div className="pin Malaysia ">
+          <div className="pin Oceania ">
             <span
               style={{
                 fontFamily: PRIMARY_TEXT_STYLES.lucidaSans,
@@ -651,45 +590,12 @@ const landingPage = () => {
                 fontStyle: "italic",
               }}
             >
-              Malaysia 
-            </span>
-          </div>
-          <div className="pin Australia  ">
-            <span
-              style={{
-                fontFamily: PRIMARY_TEXT_STYLES.lucidaSans,
-                fontWeight: "300",
-                fontStyle: "italic",
-              }}
-            >
-              Australia
-            </span>
-          </div>
-          <div className="pin NewZealand ">
-            <span
-              style={{
-                fontFamily: PRIMARY_TEXT_STYLES.lucidaSans,
-                fontWeight: "300",
-                fontStyle: "italic",
-              }}
-            >
-              New Zealand
+              Oceania
             </span>
           </div>
         </div>
       </Box>
-      {/* <Link
-        to="./home"
-        style={{ position: "absolute", bottom: 16, right: 16, zIndex: 3 }}
-      >
-        <IconButton
-          aria-label="delete"
-          size="large"
-          sx={{ backgroundColor: "white" }}
-        >
-          <ArrowForwardIcon fontSize="inherit" />
-        </IconButton>
-      </Link> */}
+
     </Box>
   );
 };
